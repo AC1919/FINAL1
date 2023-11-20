@@ -6,7 +6,12 @@ require('dotenv').config()
 
 //middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+  {
+  origin:["https://frontendnew-six.vercel.app/"],
+  methods:["POST","GET","PATCH","DELETE"],
+  credentials:true}
+));
 
 //connection with database
 
